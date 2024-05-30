@@ -1,0 +1,400 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-ls: #d1cdb9;
+  --color-la: #75a0cb;
+  --color-main: #311264;
+  --color-da: #556395;
+  --color-ds: #16151b;
+
+  --success: #468455;
+  --primary: #371e61;
+  --info: #16151b;
+  --warning: #c3731d;
+  --danger: #f44336;
+}
+
+body,
+html {
+  font-family: Arial, Helvetica, sans-serif;
+
+  background: linear-gradient(
+    330deg,
+    var(--color-main) 0%,
+    var(--color-ds) 100%
+  );
+
+  color: var(--color-ls);
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2 {
+  color: var(--color-ls);
+  font-size: 1rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+header {
+  width: 100%;
+  padding: 0.25rem;
+}
+
+.players-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  border: solid 2px rgb(80, 80, 80);
+  border-radius: 1rem;
+  flex: 1;
+  margin-inline: 0.25rem;
+  background: #00000063;
+}
+
+.player > p {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.player:hover {
+  border: solid 2px rgb(255, 255, 255);
+}
+
+.player-selected {
+  border: solid 2px rgb(133, 197, 74);
+}
+
+.avatars {
+  width: 15vw;
+  height: 15vw;
+  margin: 0.5rem;
+}
+
+.hearts-container {
+  display: flex;
+  padding-bottom: 0.5rem;
+}
+
+.checked-player-infos {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-ds);
+  min-width: 100%;
+  padding: 1rem;
+  margin: 0.25rem;
+  border-radius: 1rem;
+}
+
+.infos-buttons-container {
+  display: flex;
+  justify-content: center;
+  min-width: 100%;
+}
+
+.stats-menu-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  min-width: 100%;
+
+  justify-content: start;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  overflow: hidden;
+  min-width: 100%;
+}
+
+.infos-stat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border: solid 2px var(--color-ls);
+  border-radius: 1rem;
+  cursor: pointer;
+  padding: 0.2rem;
+}
+
+.infos-stat-container > svg > g > path {
+  fill: var(--color-da);
+  stroke-width: 0;
+}
+
+.infos-stat-container:hover {
+  border: solid 2px var(--warning);
+}
+
+.infos-stat-container > p {
+  margin: 0;
+}
+
+.stat-selected {
+  border: solid 2px var(--success);
+}
+
+.stat-description {
+  text-align: center;
+  min-width: 100%;
+}
+
+.items-container {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  gap: 0.25rem;
+  padding: 0.5rem;
+}
+
+.items-top {
+  display: flex;
+  min-width: 100%;
+  align-items: start;
+  justify-content: space-around;
+  gap: 0.25rem;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 1px var(--color-la);
+  color: var(--color-ls);
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+}
+
+.item > p {
+  flex-grow: 1;
+  font-size: 0.8rem;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+.icon-heart {
+  width: 1rem;
+  height: 1rem;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 0.25rem;
+  width: 100%;
+}
+
+.event-description {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-inline: 0.25rem;
+}
+
+.actions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-width: 80%;
+}
+
+.action {
+  min-width: 100%;
+}
+
+button {
+  display: inline-block;
+  padding-block: 1rem;
+  font-size: small;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--color-da);
+  color: var(--color-ls);
+  cursor: pointer;
+  width: 80%;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--success);
+}
+
+button:disabled {
+  background-color: var(--warning);
+  cursor: not-allowed;
+}
+
+button:disabled:hover {
+  background-color: var(--danger);
+}
+
+footer {
+  text-align: center;
+  font-size: small;
+  background: var(--color-ds);
+  min-width: 100%;
+}
+
+@media (max-width: 290px) {
+  .player > p {
+    font-size: 0.6rem;
+  }
+  .stat-description,
+  .event-description {
+    font-size: 0.8rem;
+  }
+  button {
+    padding-block: 0.7rem;
+    font-size: 0.7rem;
+  }
+  .icon {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .item > p {
+    font-size: 0.5rem;
+  }
+  .stats-container {
+    gap: 0;
+    flex-wrap: wrap;
+  }
+  .stat-description {
+    font-size: small;
+  }
+  footer {
+    text-align: center;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 220px) {
+  .player > p {
+    font-size: 0.6rem;
+  }
+  h1,
+  h2 {
+    font-size: 0.6rem;
+  }
+  button {
+    padding-block: 0.7rem;
+    font-size: 0.6rem;
+  }
+  .icon {
+    width: 1rem;
+    height: 1rem;
+  }
+  .item > p {
+    font-size: 0.5rem;
+  }
+  .icon-heart {
+    width: 0.7rem;
+    height: 0.7rem;
+  }
+
+  .stat-description,
+  .event-description {
+    font-size: 0.7rem;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 0.5rem;
+  }
+}
+
+/* 
+#board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+#board button {
+  width: 100px;
+  height: 100px;
+  font-size: 24px;
+  margin: 5px;
+  cursor: pointer;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+#board button:hover {
+  border-color: #888;
+}
+
+#board button:disabled {
+  cursor: not-allowed;
+  background-color: #f9f9f9;
+  border-color: #eee;
+}
+
+#playersSection {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+#playersSection li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+#playersSection li img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+#playersSection li span {
+  font-size: 18px;
+} */
